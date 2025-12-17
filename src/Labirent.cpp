@@ -8,6 +8,7 @@
 // Kodlarken kullandığımız cihaz macOS tu, bu yüzden terminal temizleme komutunu platforma göre ayarlama kararı aldık.
 // Windows'ta da çalışması için ek bir kontrol ekledik.
 #ifdef _WIN32
+    #include <windows.h>
     #define CLEAR_CMD "cls"
 #else
     #define CLEAR_CMD "clear"
@@ -20,7 +21,9 @@ using namespace std;
 char YonChr[] = {31, 17, 30, 16}; 
 
 Labirent::Labirent() {
-    // Başlangıçta özel bir işlem yok
+    #ifdef _WIN32
+        SetConsoleOutputCP(437);
+    #endif
 }
 
 void Labirent::haritaOku() {

@@ -13,10 +13,14 @@ int main() {
     labirent.ekranaYaz();
     
     cout << "Labirent cozumu basliyor... (Devam etmek icin Enter'a bas)" << endl;
-    cin.get(); // Kullanıcıdan Enter tuşuna basması için komut bekledim, çünkü bana göre daha iyi oldu.
+    cin.get(); // Kullanıcıdan Enter tuşuna basması için komut bekliyoruz, haritayı görmesi için.
     
-    // 3. Komutun ardından labirenti çözüyoruz ve kullanıcıya sonucu gösteriyoruz
     labirent.coz();
+
+     // Kullanıcıdan Enter tuşuna basması için komut bekliyoruz, Sonucu görmesi için.
+    cout << "Cikmak icin Enter'a basiniz..." << endl;
+    cin.ignore(); 
+    cin.get();  
     
     return 0;
 }
